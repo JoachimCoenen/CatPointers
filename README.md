@@ -4,9 +4,9 @@ A smart pointer implementation for C++ with clear ownership semantics
 # Features
  - `WeakPtr<T>`: Signifies non-ownership. The target won't be deleted when the pointer gets destroyed.
  - `OwningPtr<T>`: Signifies ownership. The target will be deleted when the pointer gets destroyed.
- - `SharedPtr<T>`: Signifies shared ownership. The target won't be deleted untill all shared pointers to it are destroyed.
- - clear ownership semntics
- - less verbos type casting using:
+ - `SharedPtr<T>`: Signifies shared ownership. The target won't be deleted until all shared pointers to it are destroyed.
+ - clear ownership semantics
+ - less verbous type casting using:
    - `myPtr.as<T>()` instead of `std::dynamic_pointer_cast<T*>(myPtr)`
    -  `myPtr.asStatic<T>()` instead of `std::static_pointer_cast<T*>(myPtr)`
 
@@ -105,7 +105,7 @@ CircleSharedPtr circle1{ {}, 7.5, Position(...) }; // creates a new Circle insta
 #include "catPointers.h"
 #include <vector>
 
-PTRS_FOR_TEMPLATE_STRUCT(TreeNode, class T_, T_); // adds pointer aliases for a templated struct BEFORE acual type definition.
+PTRS_FOR_TEMPLATE_STRUCT(TreeNode, class T_, T_); // adds pointer aliases for a templated struct BEFORE actual type definition.
 template <class T_>
 struct TreeNode {
     using T = T_;
@@ -140,10 +140,10 @@ public:
     }
 
     TreeNodePtr<T> removeChild(size_t index) {
-        auto result = std::move(_children.at(index)); // transfer owneship
+        auto result = std::move(_children.at(index)); // transfer ownership
         _children.erase(_children.begin() + index); // remove from list
         result->_parent = nullptr; // set parent to null
-        return result; // transfers owneship because copy elision
+        return result; // transfers ownership because copy elision
     }
 
     const std::vector<TreeNodePtr<T>>& children() { return _children; }
