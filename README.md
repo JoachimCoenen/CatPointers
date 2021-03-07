@@ -16,7 +16,6 @@ They are:
 
 - `ADD_PTR_TYPES(Cls)`
 - `PTRS_FOR_STRUCT(Cls)` and `PTRS_FOR_CLASS(Cls)`
-
 - `ADD_PTR_TYPES_TEMPLATE(Cls, tmplParams, tmplArgs)`
 - `PTRS_FOR_TEMPLATE_STRUCT(Cls, tmplParams, tmplArgs)` and `PTRS_FOR_TEMPLATE_CLASS(Cls, tmplParams, tmplArgs)`
 
