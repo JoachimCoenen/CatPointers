@@ -1,6 +1,5 @@
 #include "autoTest.h"
 
-#include <vector>
 #include <iostream>
 
 namespace cat::autoTest
