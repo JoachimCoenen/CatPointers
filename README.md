@@ -90,13 +90,13 @@ CircleWeakPtr circle1{new Circle(...) }; // initializes with a pointer
 // OwningPtr<>
 CirclePtr circle1{}; // initializes to nullptr
 CirclePtr circle1{new Circle(...) }; // initializes with a pointer and takes ownership of the target.
-CirclePtr circle1{{}, 7.5, Position(...) }; // creates a new Circle instance.
-//                 ^ - InplaceConstructorTag
+CirclePtr circle1{ {}, 7.5, Position(...) }; // creates a new Circle instance.
+//                 ^ InplaceConstructorTag
 
 // SharedPtr<>
 CircleSharedPtr circle1{}; // initializes to nullptr
-CircleSharedPtr circle1{{}, 7.5, Position(...) }; // creates a new Circle instance.
-//                 ^ - InplaceConstructorTag
+CircleSharedPtr circle1{ {}, 7.5, Position(...) }; // creates a new Circle instance.
+//                       ^ InplaceConstructorTag
 ```
 
 ## Example: TreeNode
