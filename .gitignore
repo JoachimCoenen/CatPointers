@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# OTHER:
+
+# qtcreator generated files
+*.pro.user*
+
+# build directories
+build-*/
